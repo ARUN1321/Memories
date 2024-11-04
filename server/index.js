@@ -14,7 +14,13 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRouter);
 
-const CONNECTION_URL = 'mongodb+srv://JSM_Arun:JSM_Arun123@cluster0.1ddme.mongodb.net/' || process.env.CONNECTION_URL;
+app.get("/", (req, res) => {
+  res.send("APP IS RUNNING");
+});
+
+const CONNECTION_URL =
+  "mongodb+srv://JSM_Arun:JSM_Arun123@cluster0.1ddme.mongodb.net/" ||
+  process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
 
 mongoose
